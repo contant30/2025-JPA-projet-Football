@@ -11,9 +11,7 @@ import java.util.Set;
 
 /**
  * Classe qui représente le lieu où le match a lieu
- *
  */
-
 @Entity
 @Table(name = "lieu")
 
@@ -30,7 +28,8 @@ public class Lieu {
     private String pays;
 
     /**
-     * Relation One to Many avec Match
+     * Relation One-to-Many avec Match.
+     * Un lieu peut accueillir plusieurs matchs.
      */
     @OneToMany(mappedBy = "lieu")
     private Set<Match> matchs;
@@ -108,5 +107,18 @@ public class Lieu {
      */
     public void setMatchs(Set<Match> matchs) {
         this.matchs = matchs;
+    }
+
+    /**
+     * @return les attributs de l'instance.
+     */
+    @Override
+    public String toString() {
+        return "Lieu{" +
+                "idLieu=" + idLieu +
+                ", ville='" + ville + '\'' +
+                ", pays='" + pays + '\'' +
+                ", matchs=" + matchs +
+                '}';
     }
 }

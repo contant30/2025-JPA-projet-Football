@@ -25,7 +25,8 @@ public class Tournoi {
     private String nomTournoi;
 
     /**
-     * Relation One to Many avec Match
+     * Relation One-to-Many avec Match.
+     * Un tournoi peut contenir plusieurs matchs.
      */
     @OneToMany(mappedBy = "tournoi")
     private Set<Match> matchs;
@@ -85,5 +86,17 @@ public class Tournoi {
      */
     public void setMatchs(Set<Match> matchs) {
         this.matchs = matchs;
+    }
+
+    /**
+     * @return les attributs de l'instance.
+     */
+    @Override
+    public String toString() {
+        return "Tournoi{" +
+                "idTournoi=" + idTournoi +
+                ", nomTournoi='" + nomTournoi + '\'' +
+                ", matchs=" + matchs +
+                '}';
     }
 }
