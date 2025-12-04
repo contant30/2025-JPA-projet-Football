@@ -36,21 +36,21 @@ public class Equipe {
      * Relation OneToMany avec l'entité TirBut
      * représentant l'équipe qui gagne la séance de tir au but
      */
-    @OneToMany(mappedBy = "equipeGaganteTir")
+    @OneToMany(mappedBy = "equipeGagnanteTir")
     private Set<TirBut> tirButGagnant;
 
     /**
      * Relation One-to-Many avec l'entité Match.
      * représente les matchs d'une équipe hote
      */
-    @OneToMany(mappedBy = "equipe_hote")
+    @OneToMany(mappedBy = "equipeHote")
     private Set<Match> matchsHote;
 
     /**
      * Relation One-to-Many avec l'entité Match.
      * représente les matchs d'une équipe invité
      */
-    @OneToMany(mappedBy = "equipe_invite")
+    @OneToMany(mappedBy = "equipeInvite")
     private Set<Match> matchsInvite;
 
     /**
