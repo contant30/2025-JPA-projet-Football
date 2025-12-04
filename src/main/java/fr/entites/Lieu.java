@@ -14,7 +14,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "lieu")
-
 public class Lieu {
 
     @Id
@@ -41,20 +40,17 @@ public class Lieu {
 
     /**
      * Constructeur qui permet de creer un lieu
-     * @param idLieu    identifiant du lieu
      * @param ville     nom de la ville
      * @param pays      nom du pays
      * @param matchs    ensemble des matchs d'un lieu
      */
-    public Lieu(Integer idLieu, String ville, String pays, Set<Match> matchs) {
-        this.idLieu = idLieu;
+    public Lieu( String ville, String pays, Set<Match> matchs) {
         this.ville = ville;
         this.pays = pays;
         this.matchs = matchs;
     }
 
     /**
-     * Getter qui retourne l'id du lieu
      * @return l'id d'un lieu
      */
     public Integer getIdLieu() {
@@ -62,7 +58,6 @@ public class Lieu {
     }
 
     /**
-     * Getter qui retourne le nom d'une ville
      * @return le nom de la ville
      */
     public String getVille() {
@@ -70,7 +65,6 @@ public class Lieu {
     }
 
     /**
-     * Setter qui permet de modifier le nom d'une ville
      * @param ville le nouveau nom de la ville
      */
     public void setVille(String ville) {
@@ -78,7 +72,6 @@ public class Lieu {
     }
 
     /**
-     * Getter qui retourne le nom d'un pays
      * @return le nom du pays
      */
     public String getPays() {
@@ -86,7 +79,6 @@ public class Lieu {
     }
 
     /**
-     * Setter qui permet de modifier le nom d'un pays
      * @param pays le nouveau nom du pays
      */
     public void setPays(String pays) {
@@ -94,7 +86,6 @@ public class Lieu {
     }
 
     /**
-     * Getter qui retourne l'ensemble des matchs associé à un lieu
      * @return un Set contenant les matchs du lieu
      */
     public Set<Match> getMatchs() {
@@ -102,7 +93,6 @@ public class Lieu {
     }
 
     /**
-     * Setter qui permet de modifier les matchs d'un lieu
      * @param matchs un Set avec les nouveaux matchs d'un lieu
      */
     public void setMatchs(Set<Match> matchs) {

@@ -6,28 +6,38 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.util.Set;
 
 /**
  * Classe qui représente une séance de tir au but lors match de foot
  */
 @Entity
 @Table(name = "tir_but")
-
 public class TirBut {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTirBut;
 
-    @Column(name = "equipe_commence_tir")
-    private String equipeCommenceTir;
 
-    @Column(name = "equipe_gagante_tir")
-    private String equipeGagnanteTir;
+    /**
+     * Relation Many-to-One avec l'entité Equipe
+     * Définit quelle equipe commence la séance tir au but
+     */
+    @ManyToOne
+    @JoinColumn(name = "equipe_commence_tir")
+    private Equipe equipeCommenceTir;
+
+    /**
+     * Relation Many-to-One avec l'entité Equipe
+     * Définit quelle equipe gagne la séance de tir au but
+     */
+    @ManyToOne
+    @JoinColumn(name = "equipe_Gagnant_tir")
+    private Equipe equipeGagnanteTir;
+
 
     /**
      * Relation One-to-One avec Match.
@@ -37,6 +47,7 @@ public class TirBut {
     @JoinColumn(name = "match_id")
     private Match match;
 
+
     /**
      * Constructeur sans paramètre pour JPA
      */
@@ -45,13 +56,11 @@ public class TirBut {
     /**
      * Constructeur qui permet de creer une séance de tir au but.
      *
-     * @param idTirBut              identifiant de la séance de tir au but
      * @param equipeCommenceTir     nom de la première équipe qui commence la séance
      * @param equipeGagnanteTir     nom de l'équipe qui gagne la séance de tir au but
      * @param match                 nom du match associé à la séance de tir au but
      */
-    public TirBut(Integer idTirBut, String equipeCommenceTir, String equipeGagnanteTir, Match match) {
-        this.idTirBut = idTirBut;
+    public TirBut( Equipe equipeCommenceTir, Equipe equipeGagnanteTir, Match match) {
         this.equipeCommenceTir = equipeCommenceTir;
         this.equipeGagnanteTir = equipeGagnanteTir;
         this.match = match;
@@ -67,28 +76,28 @@ public class TirBut {
     /**
      * @return le nom de l'équipe qui commence la séance le tir au but
      */
-    public String getEquipeCommenceTir() {
+    public Equipe getEquipeCommenceTir() {
         return equipeCommenceTir;
     }
 
     /**
      * @param equipeCommenceTir le nouveau nom de l'équipe
      */
-    public void setEquipeCommenceTir(String equipeCommenceTir) {
+    public void setEquipeCommenceTir(Equipe equipeCommenceTir) {
         this.equipeCommenceTir = equipeCommenceTir;
     }
 
     /**
      * @return le nom de l'équipe qui a gagné la séance de tir au but
      */
-    public String getEquipeGagnanteTir() {
+    public Equipe getEquipeGagnanteTir() {
         return equipeGagnanteTir;
     }
 
     /**
      * @param equipeGagnanteTir le nouveau nom de l'équipe gagnante
      */
-    public void setEquipeGagnanteTir(String equipeGagnanteTir) {
+    public void setEquipeGagnanteTir(Equipe equipeGagnanteTir) {
         this.equipeGagnanteTir = equipeGagnanteTir;
     }
 
