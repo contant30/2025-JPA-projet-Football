@@ -1,9 +1,9 @@
-package fr.EntitesData;
+package fr.entitesData;
 
 import java.time.LocalDate;
 
 /*
- * class correspondants aux élément du fichier csv résults
+ * class qui représente une ligne du fichier CSV results.csv
  */
 public class ResultatData {
 
@@ -14,7 +14,7 @@ public class ResultatData {
     private String scoreInvite;
     private String nomTournoi;
     private String ville;
-    private String Pays;
+    private String pays;
     private Boolean terrainNeutre;
 
     public ResultatData(){
@@ -29,7 +29,7 @@ public class ResultatData {
         this.scoreInvite = scoreInvite;
         this.nomTournoi = nomTournoi;
         this.ville = ville;
-        Pays = pays;
+        this.pays = pays;
         this.terrainNeutre = terrainNeutre;
     }
 
@@ -90,11 +90,11 @@ public class ResultatData {
     }
 
     public String getPays() {
-        return Pays;
+        return pays;
     }
 
     public void setPays(String pays) {
-        Pays = pays;
+        this.pays = pays;
     }
 
     public Boolean getTerrainNeutre() {
@@ -115,7 +115,7 @@ public class ResultatData {
                 ", scoreInvite='" + scoreInvite + '\'' +
                 ", nomTournoi='" + nomTournoi + '\'' +
                 ", ville='" + ville + '\'' +
-                ", Pays='" + Pays + '\'' +
+                ", Pays='" + pays + '\'' +
                 ", terrainNeutre=" + terrainNeutre +
                 '}';
     }

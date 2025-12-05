@@ -1,10 +1,13 @@
 package fr.entitesCsv;
 
-import fr.EntitesData.TirAuButData;
+import fr.entitesData.TirAuButData;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe qui stock une list de type TirAuButData du fichier CSV shootouts.csv
+ */
 public class TirAuButCsv {
 
     /*

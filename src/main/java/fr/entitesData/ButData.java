@@ -1,9 +1,9 @@
-package fr.EntitesData;
+package fr.entitesData;
 
 import java.time.LocalDate;
 
 /*
- * class correspondants aux éléments du fichier csv goalscorers
+ * class qui représente une ligne du fichier CSV goalscorers.csv
  */
 public class ButData {
 
@@ -12,7 +12,7 @@ public class ButData {
     private String equipeInvite;
     private String equipeButeur;
     private String buteur;
-    private Integer minuteScore;
+    private String minuteScore;
     private Boolean csc;
     private Boolean penalty;
 
@@ -20,7 +20,7 @@ public class ButData {
         super();
     }
 
-    public ButData(Boolean penalty, Boolean csc, Integer minuteScore, String buteur, String equipeButeur, String equipeInvite, String equipeHote, LocalDate date) {
+    public ButData(Boolean penalty, Boolean csc, String minuteScore, String buteur, String equipeButeur, String equipeInvite, String equipeHote, LocalDate date) {
         this.penalty = penalty;
         this.csc = csc;
         this.minuteScore = minuteScore;
@@ -71,11 +71,11 @@ public class ButData {
         this.buteur = buteur;
     }
 
-    public Integer getMinuteScore() {
+    public String getMinuteScore() {
         return minuteScore;
     }
 
-    public void setMinuteScore(Integer minuteScore) {
+    public void setMinuteScore(String minuteScore) {
         this.minuteScore = minuteScore;
     }
 

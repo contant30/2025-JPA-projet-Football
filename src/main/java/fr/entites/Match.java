@@ -29,13 +29,13 @@ public class Match {
     @Column(name = "date_match")
     private LocalDate dateMatch;
 
-    @Column (name = "score_hote")
+    @Column(name = "score_hote")
     private Integer scoreHote;
 
-     @Column (name = "score_invite")
+    @Column(name = "score_invite")
     private Integer scoreInvite;
 
-     @Column(name = "terrain_neutre")
+    @Column(name = "terrain_neutre")
     private Boolean neutre;
 
     /**
@@ -88,18 +88,20 @@ public class Match {
     /**
      * Constructeur sans paramètre pour JPA
      */
-    public Match() {  }
+    public Match() {
+    }
 
     /**
      * Constructeur qui permet de creer un match
-     * @param dateMatch     représente la date du match
-     * @param scoreHote     score de l'équipe hote
-     * @param scoreInvite   score de l'équipe invité
-     * @param neutre        si le match ce joue en terrain neutre
-     * @param tournoi       le nom du tournoi
-     * @param lieu          le lieu du match
-     * @param equipeHote    le nom de l'équipe hote
-     * @param equipeInvite  le nom de l'équipe invité
+     *
+     * @param dateMatch    représente la date du match
+     * @param scoreHote    score de l'équipe hote
+     * @param scoreInvite  score de l'équipe invité
+     * @param neutre       si le match ce joue en terrain neutre
+     * @param tournoi      le nom du tournoi
+     * @param lieu         le lieu du match
+     * @param equipeHote   le nom de l'équipe hote
+     * @param equipeInvite le nom de l'équipe invité
      */
     public Match(LocalDate dateMatch, Integer scoreHote, Integer scoreInvite, Boolean neutre, Tournoi tournoi, Lieu lieu, Equipe equipeHote, Equipe equipeInvite) {
         this.dateMatch = dateMatch;

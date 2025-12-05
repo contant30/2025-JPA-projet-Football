@@ -1,9 +1,9 @@
-package fr.EntitesData;
+package fr.entitesData;
 
 import java.time.LocalDate;
 
 /*
- * class correspondants aux éléments du fichier csv shootouts
+ * class qui représente une ligne du fichier CSV shootouts.csv
  */
 public class TirAuButData {
 

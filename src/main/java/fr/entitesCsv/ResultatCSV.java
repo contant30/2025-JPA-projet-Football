@@ -1,9 +1,12 @@
 package fr.entitesCsv;
 
-import fr.EntitesData.ResultatData;
+import fr.entitesData.ResultatData;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe qui stock une list de type ResultatData du fichier CSV results.csv
+ */
 public class ResultatCSV {
 
     private List<ResultatData> resultatData = new ArrayList<>();

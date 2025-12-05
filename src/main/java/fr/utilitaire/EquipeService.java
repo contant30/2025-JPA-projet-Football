@@ -1,4 +1,4 @@
-package fr.services;
+package fr.utilitaire;
 
 import fr.entites.Equipe;
 

@@ -1,9 +1,12 @@
 package fr.entitesCsv;
 
-import fr.EntitesData.ButData;
+import fr.entitesData.ButData;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe qui stock une list de type ButData du fichier CSV goalscorers.csv
+ */
 public class ButCsv {
 
     private List<ButData> butData = new ArrayList<>();
