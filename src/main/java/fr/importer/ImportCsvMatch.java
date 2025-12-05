@@ -14,7 +14,6 @@ public class ImportCsvMatch {
 
     public static void main(String[] args) {
 
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("resultats_football");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
@@ -22,16 +21,12 @@ public class ImportCsvMatch {
         String filePath = ClassLoader.getSystemClassLoader().getResource("testResultat.csv").getFile();
         ResultatCSV LireResultat = ResultatCsvLire.LireResultat(filePath);
 
-
-
         tx.begin();
 
         for (ResultatData rd : LireResultat.getResultatData()) {
                 LogiqueImportMatch.importerResultat(em, rd);
             }
         tx.commit();
-
-
 
     }
 }

@@ -58,7 +58,7 @@ public class LogiqueImportMatch {
                 .findFirst()
                 .orElse(null);
 
-        //  Si pas match trouvé, un nouvel objet Match est crée
+        //  Si pas match trouvé, un nouvel objet Match est créé
         if (match == null) {
             match = new Match();
             match.setDateMatch(date);
@@ -88,9 +88,8 @@ public class LogiqueImportMatch {
             }
 
         }
-
-
     }
+
     /* Méthode cherche une équipe par son nom,
      * ou la crée si elle n'existe pas encore.
      */

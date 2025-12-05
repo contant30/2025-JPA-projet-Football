@@ -19,7 +19,7 @@ public class ParseurTirAuBut {
     public static void ajoutLigneTirAuBut(TirAuButCsv tirAuButLigne, String ligne){
 
         /*le split permet de diviser une ligne dans un tableau à chaque , */
-        String [] bout = ligne.split(",");
+        String [] bout = ligne.split(",",-1);
         String dateMatchStr = bout[0];
         LocalDate date = LocalDate.parse(dateMatchStr);
         String equipeHote  = bout[1];
