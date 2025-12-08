@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 public class LogiqueImportTirAuBut {
 
-    public static void importerTirAuBut(EntityManager em, TirAuButData tbd) {
+    public static void importerTirAuBut(EntityManager em, TirAuButData tbd,int numLigne) {
 
 
         // Info extraite et convertie
@@ -22,7 +22,7 @@ public class LogiqueImportTirAuBut {
         String nomEquipeGagnanteTir = tbd.getEquipeGagnanteTir();
         String nomEquipeCommenceTir = tbd.getEquipeCommenceTir();
 
-        // Conversion des noms en entités Equipe
+        // appel de plusieurs méthodes pour chercher ou alors créer
         Equipe equipeHote       = trouverOuCreerEquipe(em, nomEquipeHote);
         Equipe equipeInvite     = trouverOuCreerEquipe(em, nomEquipeInvite);
         Equipe equipeGagnante  = trouverOuCreerEquipe(em, nomEquipeGagnanteTir);
@@ -32,13 +32,13 @@ public class LogiqueImportTirAuBut {
         //  Recherche d'un match correspondant à la séance de tir au but
         Match match = em.createQuery(
                         "SELECT m FROM Match m " +
-                                "WHERE m.dateMatch = :date " ,
-                               // "AND m.equipeHote = :equipeHote " +
-                                //"AND m.equipeInvite = :equipeInvite",
+                                "WHERE m.dateMatch = :date " +
+                                "AND m.equipeHote = :equipeHote " +
+                                "AND m.equipeInvite = :equipeInvite",
                         Match.class)
                 .setParameter("date", date)
-                //.setParameter("equipeHote", equipeHote)
-                //.setParameter("equipeInvite", equipeInvite)
+                .setParameter("equipeHote", equipeHote)
+                .setParameter("equipeInvite", equipeInvite)
                 .getResultStream()
                 .findFirst()
                 .orElse(null);

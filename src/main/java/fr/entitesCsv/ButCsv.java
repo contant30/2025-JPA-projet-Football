@@ -9,8 +9,10 @@ import java.util.List;
  */
 public class ButCsv {
 
+    /*
+     * Une liste d'objet du fichier csv
+     */
     private List<ButData> butData = new ArrayList<>();
-
 
     /**
      * @return une liste de ButData

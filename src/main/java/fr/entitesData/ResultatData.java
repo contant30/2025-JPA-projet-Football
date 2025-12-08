@@ -18,6 +18,7 @@ public class ResultatData {
     private Boolean terrainNeutre;
 
     public ResultatData(){
+
         super();
     }
 

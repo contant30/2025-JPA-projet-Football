@@ -11,9 +11,7 @@ import javax.persistence.Table;
 
 /**
  * Classe qui représente un but lors d'un match de foot
- *
  */
-
 @Entity
 @Table(name = "but")
 

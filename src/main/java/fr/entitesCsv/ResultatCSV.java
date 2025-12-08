@@ -9,6 +9,9 @@ import java.util.List;
  */
 public class ResultatCSV {
 
+    /*
+     * Une liste d'objet du fichier csv
+     */
     private List<ResultatData> resultatData = new ArrayList<>();
 
     /**

@@ -13,9 +13,7 @@ import java.util.Set;
 
 /**
  * Classe qui représente un buteur lors d'un match de foot
- *
  */
-
 @Entity
 @Table(name = "buteur")
 

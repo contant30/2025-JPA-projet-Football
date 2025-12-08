@@ -13,7 +13,6 @@ import java.util.Set;
  * Classe qui représente une équipe de foot
  * une équipe représente son pays
  */
-
 @Entity
 @Table(name = "equipe")
 public class Equipe {

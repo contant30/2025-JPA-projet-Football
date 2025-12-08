@@ -8,12 +8,24 @@ import javax.persistence.Persistence;
 public class ConnexionJpa {
     public static void main(String[] args) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("resultats_football");
-        EntityManager em = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
 
+        try {
+            emf = Persistence.createEntityManagerFactory("resultats_footballs");
+            em = emf.createEntityManager();
+            EntityTransaction transaction = em.getTransaction();
 
-
-
+            System.out.println("Connexion JPA établie !");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (em != null && em.isOpen()) {
+                em.close();
+            }
+            if (emf != null && emf.isOpen()) {
+                emf.close();
+            }
+        }
     }
 }

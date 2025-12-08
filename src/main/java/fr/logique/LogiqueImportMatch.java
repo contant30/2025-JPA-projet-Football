@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class LogiqueImportMatch {
 
 
-    public static void importerResultat(EntityManager em, ResultatData rd) {
+    public static void importerResultat(EntityManager em, ResultatData rd, int numLigne) {
 
         // Info extraite et convertie
         LocalDate date = rd.getDate();
@@ -93,7 +93,7 @@ public class LogiqueImportMatch {
     /* Méthode cherche une équipe par son nom,
      * ou la crée si elle n'existe pas encore.
      */
-    private static Equipe trouverOuCreerEquipe(EntityManager em, String nomEquipe) {
+    static Equipe trouverOuCreerEquipe(EntityManager em, String nomEquipe) {
          Equipe equipe = em.createQuery("SELECT e FROM Equipe e WHERE e.paysEquipe = :nom ", Equipe.class)
             .setParameter("nom", nomEquipe)
             .getResultStream()
