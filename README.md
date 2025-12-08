@@ -3,9 +3,9 @@
 Réalisation d'un projet JPA(Hibernate) pour importer, gérer et interroger des données issues de compétitions de football international, à partir de fichiers CSV. 
 
 
-Fichiers CSV : 
+## Fichiers CSV : 
 
-results.csv :
+<ins>**results.csv**</ins> :
 
 • date – date du match
 • home_team – nom de l’équipe hôte
@@ -17,7 +17,7 @@ results.csv :
 • country – pays dans lequel le match a eu lieu
 • neutral - TRUE/FALSE indique si le match s’est joué dans un lieu neutre ou non
 
-shootouts.csv :
+<ins>**shootouts.csv**</ins> :
 
 • date - date du match
 • home_team – nom de l’équipe hôte
@@ -25,7 +25,7 @@ shootouts.csv :
 • winner – vainqueur de l’épreuve de tirs aux buts
 • first_shooter – équipe qui a commencé l’épreuve des tirs aux buts
 
-goalscorers.csv :
+<ins>**goalscorers.csv**</ins> :
 
 • date – date du match
 • home_team – nom de l’équipe hôte
