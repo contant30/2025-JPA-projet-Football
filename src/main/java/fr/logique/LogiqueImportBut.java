@@ -4,12 +4,10 @@ import fr.entites.But;
 import fr.entites.Buteur;
 import fr.entites.Equipe;
 import fr.entites.Match;
-import fr.entitesData.ButData;
+import fr.entites_data.ButData;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 
 import static fr.logique.LogiqueImportMatch.trouverOuCreerEquipe;
 

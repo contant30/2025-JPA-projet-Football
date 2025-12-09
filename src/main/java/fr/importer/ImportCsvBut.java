@@ -1,8 +1,8 @@
 package fr.importer;
 
-import fr.entitesCsv.ButCsv;
-import fr.entitesData.ButData;
-import fr.lireCSV.ButCsvLire;
+import fr.entites_csv.ButCsv;
+import fr.entites_data.ButData;
+import fr.lire_csv.ButCsvLire;
 import fr.logique.LogiqueImportBut;
 
 import javax.persistence.EntityManager;
@@ -62,8 +62,8 @@ public class ImportCsvBut {
 
             // permet d'afficher tous les 500 buts importés
             if (nbImportes % 500 == 0) {
-                long finBatch = System.currentTimeMillis();
-                long dureeBatchMs = finBatch - debut500;
+                long fin = System.currentTimeMillis();
+                long dureeBatchMs = fin - debut500;
                 double dureeBatchSec = dureeBatchMs / 1000.0;
 
 
@@ -71,7 +71,7 @@ public class ImportCsvBut {
                         + " | temps pour les 500 dernières : "
                         + dureeBatchSec + " s");
                 // relance le temps pour le prochain bloc de 500
-                debut500 = finBatch;
+                debut500 = fin;
             }
             if (nbImportes % batchSize == 0) {
                 em.flush();   // exécute les INSERT/UPDATE en base

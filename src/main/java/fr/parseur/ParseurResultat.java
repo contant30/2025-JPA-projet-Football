@@ -1,7 +1,7 @@
 package fr.parseur;
 
-import fr.entitesCsv.ResultatCSV;
-import fr.entitesData.ResultatData;
+import fr.entites_csv.ResultatCSV;
+import fr.entites_data.ResultatData;
 
 import java.time.LocalDate;
 

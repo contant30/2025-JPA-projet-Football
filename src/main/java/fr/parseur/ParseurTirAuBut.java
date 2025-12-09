@@ -1,7 +1,7 @@
 package fr.parseur;
 
-import fr.entitesCsv.TirAuButCsv;
-import fr.entitesData.TirAuButData;
+import fr.entites_csv.TirAuButCsv;
+import fr.entites_data.TirAuButData;
 
 import java.time.LocalDate;
 

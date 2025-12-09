@@ -2,7 +2,6 @@ package fr.importer;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class ConnexionJpa {
@@ -14,7 +13,6 @@ public class ConnexionJpa {
         try {
             emf = Persistence.createEntityManagerFactory("resultats_footballs");
             em = emf.createEntityManager();
-            EntityTransaction transaction = em.getTransaction();
 
             System.out.println("Connexion JPA établie !");
         } catch (Exception e) {

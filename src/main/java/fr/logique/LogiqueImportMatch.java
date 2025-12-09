@@ -4,7 +4,7 @@ import fr.entites.Equipe;
 import fr.entites.Lieu;
 import fr.entites.Match;
 import fr.entites.Tournoi;
-import fr.entitesData.ResultatData;
+import fr.entites_data.ResultatData;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;

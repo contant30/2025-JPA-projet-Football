@@ -3,7 +3,7 @@ package fr.logique;
 import fr.entites.Equipe;
 import fr.entites.Match;
 import fr.entites.TirBut;
-import fr.entitesData.TirAuButData;
+import fr.entites_data.TirAuButData;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;

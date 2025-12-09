@@ -1,6 +1,6 @@
-package fr.lireCSV;
+package fr.lire_csv;
 
-import fr.entitesCsv.TirAuButCsv;
+import fr.entites_csv.TirAuButCsv;
 import fr.parseur.ParseurTirAuBut;
 import org.apache.commons.io.FileUtils;
 

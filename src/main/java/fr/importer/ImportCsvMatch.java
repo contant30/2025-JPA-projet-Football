@@ -1,8 +1,8 @@
 package fr.importer;
 
-import fr.entitesCsv.ResultatCSV;
-import fr.entitesData.ResultatData;
-import fr.lireCSV.ResultatCsvLire;
+import fr.entites_csv.ResultatCSV;
+import fr.entites_data.ResultatData;
+import fr.lire_csv.ResultatCsvLire;
 import fr.logique.LogiqueImportMatch;
 
 import javax.persistence.EntityManager;

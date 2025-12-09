@@ -1,8 +1,8 @@
 package fr.importer;
 
-import fr.entitesCsv.TirAuButCsv;
-import fr.entitesData.TirAuButData;
-import fr.lireCSV.TirAuButCsvLire;
+import fr.entites_csv.TirAuButCsv;
+import fr.entites_data.TirAuButData;
+import fr.lire_csv.TirAuButCsvLire;
 import fr.logique.LogiqueImportTirAuBut;
 
 import javax.persistence.EntityManager;

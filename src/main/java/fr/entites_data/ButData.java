@@ -1,4 +1,4 @@
-package fr.entitesData;
+package fr.entites_data;
 
 import java.time.LocalDate;
 
@@ -59,40 +59,20 @@ public class ButData {
         return equipeButeur;
     }
 
-    public void setEquipeButeur(String equipeButeur) {
-        this.equipeButeur = equipeButeur;
-    }
-
     public String getButeur() {
         return buteur;
-    }
-
-    public void setButeur(String buteur) {
-        this.buteur = buteur;
     }
 
     public String getMinuteScore() {
         return minuteScore;
     }
 
-    public void setMinuteScore(String minuteScore) {
-        this.minuteScore = minuteScore;
-    }
-
     public Boolean getCsc() {
         return csc;
     }
 
-    public void setCsc(Boolean csc) {
-        this.csc = csc;
-    }
-
     public Boolean getPenalty() {
         return penalty;
-    }
-
-    public void setPenalty(Boolean penalty) {
-        this.penalty = penalty;
     }
 
     @Override

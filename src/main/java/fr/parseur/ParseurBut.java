@@ -1,7 +1,7 @@
 package fr.parseur;
 
-import fr.entitesCsv.ButCsv;
-import fr.entitesData.ButData;
+import fr.entites_csv.ButCsv;
+import fr.entites_data.ButData;
 
 import java.time.LocalDate;
 

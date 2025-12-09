@@ -1,6 +1,6 @@
-package fr.entitesCsv;
+package fr.entites_csv;
 
-import fr.entitesData.TirAuButData;
+import fr.entites_data.TirAuButData;
 
 import java.util.ArrayList;
 import java.util.List;
