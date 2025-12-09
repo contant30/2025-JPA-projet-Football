@@ -10,11 +10,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Classe qui permet d'importer les buts de match
  * depuis un fichier CSV goalscorers
  */
 public class ImportCsvBut {
+    private static final Logger logger = LoggerFactory.getLogger(ImportCsvBut.class);
+
 
     public static void main(String[] args) {
 
@@ -67,9 +72,9 @@ public class ImportCsvBut {
                 double dureeBatchSec = dureeBatchMs / 1000.0;
 
 
-                System.out.println("Lignes traitées : " + nbImportes
-                        + " | temps pour les 500 dernières : "
-                        + dureeBatchSec + " s");
+                logger.info("Lignes traitées : {} | temps pour les 500 dernières : {} s",
+                        nbImportes, dureeBatchSec);
+
                 // relance le temps pour le prochain bloc de 500
                 debut500 = fin;
             }
@@ -89,8 +94,8 @@ public class ImportCsvBut {
             double dureeMin = dureeSec / 60.0;
 
             // Affiche les statistique d'import
-            System.out.println("Nombre de buts importés : " + nbImportes);
-            System.out.println("Temps d'import : " + dureeMin + " minute (" + dureeSec + " s)");
+            logger.info("Nombre de buts importés : {}", nbImportes);
+            logger.info("Temps d'import : {} minute : {} s", dureeMin, dureeSec);
 
         } catch (Exception e){
             // Si une erreur, un rollback est effectué

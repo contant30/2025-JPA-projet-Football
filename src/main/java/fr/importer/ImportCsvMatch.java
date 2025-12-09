@@ -10,12 +10,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Classe qui permet d'importer les resultats de match
  * depuis un fichier CSV results
  */
 
 public class ImportCsvMatch {
+    private static final Logger logger = LoggerFactory.getLogger(ImportCsvMatch.class);
+
 
     public static void main(String[] args) {
 
@@ -65,8 +70,8 @@ public class ImportCsvMatch {
                 long dureeBatchMs = finBatch - debut500;
                 double dureeBatchSec = dureeBatchMs / 1000.0;
 
-                System.out.println("Lignes traitées : " + nbMatchImportes+ " | temps pour les 500 dernières : "
-                        + dureeBatchSec + " s");
+                logger.info("Lignes traitées : {} | temps pour les 500 dernières : {} s", nbMatchImportes
+                        ,dureeBatchSec);
 
                 // relance le temps pour le prochain bloc de 500
                 debut500 = finBatch;
@@ -86,8 +91,8 @@ public class ImportCsvMatch {
             double dureeSec = dureeMs / 1000.0;
 
             // Affiche les statistique d'import
-            System.out.println("Nombre de match importés : " + nbMatchImportes);
-            System.out.println("Temps d'import : " + dureeMs + " ms (" + dureeSec + " s)");
+            logger.info("Nombre de match importés : {}",nbMatchImportes);
+            logger.info("Temps d'import : {} ms {} s" , dureeMs ,dureeSec);
 
         } catch (Exception e){
             // Si une erreur, un rollback est effectué
