@@ -97,41 +97,6 @@ public class LogiqueImportBut {
 
             // Sauvegarde en base
             em.persist(but);
-
-
-
-
-
         }
-
-//    private static Buteur trouverOuCreerButeur(EntityManager em, String nomButeur, Equipe equipeButeur) {
-//        String cle = nomButeur + "|" + equipeButeur.getIdEquipe();
-//
-//        Buteur buteur = cacheButeurs.get(cle);
-//        if (buteur != null) {
-//            return buteur;
-//        }
-//
-//        buteur = em.createQuery(
-//                        "SELECT b FROM Buteur b " +
-//                                "WHERE b.nomButeur = :nomButeur " +
-//                                "AND b.equipe = :equipe",
-//                        Buteur.class)
-//                .setParameter("nomButeur", nomButeur)
-//                .setParameter("equipe", equipeButeur)
-//                .getResultStream()
-//                .findFirst()
-//                .orElse(null);
-//
-//        if (buteur == null) {
-//            buteur = new Buteur();
-//            buteur.setNomButeur(nomButeur);
-//            buteur.setEquipe(equipeButeur);
-//            em.persist(buteur);
-//        }
-//
-//        cacheButeurs.put(cle, buteur);
-//        return buteur;
-//    }
     }
 

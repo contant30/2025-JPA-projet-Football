@@ -12,7 +12,6 @@ public class LogiqueImportTirAuBut {
 
     public static void importerTirAuBut(EntityManager em, TirAuButData tbd,int numLigne) {
 
-
         // Info extraite et convertie
         LocalDate date = tbd.getDate();
 
@@ -27,7 +26,6 @@ public class LogiqueImportTirAuBut {
         Equipe equipeInvite     = trouverOuCreerEquipe(em, nomEquipeInvite);
         Equipe equipeGagnante  = trouverOuCreerEquipe(em, nomEquipeGagnanteTir);
         Equipe equipeCommence  = trouverOuCreerEquipe(em, nomEquipeCommenceTir);
-
 
         //  Recherche d'un match correspondant à la séance de tir au but
         Match match = em.createQuery(
@@ -48,7 +46,6 @@ public class LogiqueImportTirAuBut {
             // pour l'instant on sort si pas de match
             return;
         }
-
 
         // Vérifier si une séance de tir au but existe déjà pour ce match
         TirBut tirBut = em.createQuery(
@@ -75,7 +72,6 @@ public class LogiqueImportTirAuBut {
                 tirBut.setEquipeGagnanteTir(equipeGagnante);
             }
         }
-
     }
 
     // même méthode utilitaire que dans ta logique d'import de match
@@ -95,8 +91,6 @@ public class LogiqueImportTirAuBut {
         }
         return equipe;
     }
-
-
 }
 
 
