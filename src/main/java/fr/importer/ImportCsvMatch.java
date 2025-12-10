@@ -98,7 +98,7 @@ public class ImportCsvMatch {
             // Si une erreur, un rollback est effectué
             if (tx != null && tx.isActive()){
                 tx.rollback();
-            } e.printStackTrace();// Affichage de l'erreur
+            } logger.error("Une erreur s'est produite : {}", e.getMessage(), e);// Affichage de l'erreur
         }finally {
             // Fermeture de l'EntityManager
             if (em != null && em.isOpen()){
