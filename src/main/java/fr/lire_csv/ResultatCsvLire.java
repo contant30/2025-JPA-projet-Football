@@ -3,6 +3,8 @@ package fr.lire_csv;
 import fr.entites_csv.ResultatCSV;
 import fr.parseur.ParseurResultat;
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +14,8 @@ import java.util.List;
  * et le convertir en objet ResultatCsv
  */
 public class ResultatCsvLire {
+    private static final Logger logger = LoggerFactory.getLogger(ResultatCsvLire.class);
+
 
     // Constructeur privé pour empêcher une instanciation
     private ResultatCsvLire() { }
@@ -39,7 +43,7 @@ public class ResultatCsvLire {
             return resultatCSV;
             // Si une erreur se produit lors de la lecture du fichier, renvoie null
         } catch (IOException e){
-            System.out.println(e.getMessage());
+            logger.info("Erreur : {}", e.getMessage());
             return null;
         }
     }

@@ -5,14 +5,12 @@ import fr.entites.Buteur;
 import fr.entites.Equipe;
 import fr.entites.Match;
 import fr.entites_data.ButData;
-import fr.importer.ImportCsvBut;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 import static fr.logique.LogiqueImportMatch.trouverOuCreerEquipe;

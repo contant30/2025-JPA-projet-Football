@@ -8,10 +8,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /** Classe qui permet de lire le contenu du fichier CSV goalscorers.csv
  * et le convertir en objet ButCsv
  */
 public class ButCsvLire {
+    private static final Logger logger = LoggerFactory.getLogger(ButCsvLire.class);
+
 
     // Constructeur privé pour empêcher une instanciation
     private ButCsvLire() {   }
@@ -39,7 +44,7 @@ public class ButCsvLire {
             return butCsv;
             // Si une erreur se produit lors de la lecture du fichier, renvoie null
         } catch (IOException e){
-            System.out.println(e.getMessage());
+            logger.info("Erreur : {}", e.getMessage());
         return null;
         }
     }

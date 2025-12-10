@@ -13,7 +13,7 @@ public class LogiqueImportTirAuBut {
     // Constructeur privé pour empêcher une instanciation
     private LogiqueImportTirAuBut() {  }
 
-    public static void importerTirAuBut(EntityManager em, TirAuButData tbd) {
+    public static void importerTirAuBut(EntityManager em, TirAuButData tbd, int numLigne) {
 
         // Info extraite et convertie
         LocalDate date = tbd.getDate();

@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  * depuis un fichier CSV shootouts
  */
 public class ImportCsvTirAuBut {
-    private static final Logger logger = LoggerFactory.getLogger(ImportCsvBut.class);
+    private static final Logger logger = LoggerFactory.getLogger(ImportCsvTirAuBut.class);
 
 
     public static void main(String[] args) {
