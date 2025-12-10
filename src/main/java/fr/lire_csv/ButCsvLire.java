@@ -13,6 +13,9 @@ import java.util.List;
  */
 public class ButCsvLire {
 
+    // Constructeur privé pour empêcher une instanciation
+    private ButCsvLire() {   }
+
     /** Lit le contenu du fichier en paramétrée de la méthode
      * et retourne une instance de ButCsv avec toutes les informations lues
      * @param cheminFichierBut chemin du fichier CSV goalscorers.csv

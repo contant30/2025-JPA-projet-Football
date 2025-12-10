@@ -5,13 +5,20 @@ import fr.entites.Buteur;
 import fr.entites.Equipe;
 import fr.entites.Match;
 import fr.entites_data.ButData;
+import fr.importer.ImportCsvBut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import static fr.logique.LogiqueImportMatch.trouverOuCreerEquipe;
 
 public class LogiqueImportBut {
+    private static final Logger logger = LoggerFactory.getLogger(LogiqueImportBut.class);
 
     // Constructeur privé pour empêcher une instanciation
     private LogiqueImportBut() {   }
@@ -52,10 +59,9 @@ public class LogiqueImportBut {
                 .orElse(null);
 
         if (match == null) {
-            System.err.println("Pas de match trouvé");
-            System.err.println("Ligne " + numLigne + " ignorée : pas de match trouvé pour "
-                    + date + " " + nomEquipeHote + " - " + nomEquipeInvite
-                    + " | buteur = " + nomButeur);
+            logger.info("Pas de match trouvé");
+            logger.info("Ligne {} ignorée : pas de match trouvé pour {} {} - {} | buteur = {}",
+                    numLigne,date,nomEquipeHote ,nomEquipeInvite ,nomButeur);
             return;
         }
 

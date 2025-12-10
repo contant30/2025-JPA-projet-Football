@@ -13,6 +13,9 @@ import java.util.List;
  */
 public class ResultatCsvLire {
 
+    // Constructeur privé pour empêcher une instanciation
+    private ResultatCsvLire() { }
+
     /** Lit le contenu du fichier en paramétrée de la méthode
      * et retourne une instance de ResultatCsv avec toutes les informations lues
      * @param cheminFichierBut chemin du fichier CSV results.csv
