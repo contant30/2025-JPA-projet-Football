@@ -37,6 +37,69 @@ Réalisation d'un projet JPA(Hibernate) pour importer, gérer et interroger des 
 • own_goal – TRUE/FALSE but contre son camp
 • penalty – TRUE/FALSE but sur penalty
 
+### 🛠️ Architecture du projet :
+
+```
+src/
+└── main/
+    ├── java/
+    │   └── fr/
+    │       └── contant/
+    │           ├── entites/
+    │           │   ├── But.java
+    │           │   ├── Buteur.java
+    │           │   ├── Equipe.java
+    │           │   ├── Lieu.java
+    │           │   ├── Match.java
+    │           │   ├── TirBut.java
+    │           │   └── Tournoi.java
+    │           │
+    │           ├── entites_csv/
+    │           │   ├── ButCsv.java
+    │           │   ├── ResultatCsv.java
+    │           │   └── TirAuButCsv.java
+    │           │
+    │           ├── entites_data/
+    │           │   ├── ButData.java
+    │           │   ├── ResultatData.java
+    │           │   └── TirAuButData.java
+    │           │
+    │           ├── importer/
+    │           │   ├── ConnexionJpa.java
+    │           │   ├── ImportCsvBut.java
+    │           │   ├── ImportCsvMatch.java
+    │           │   └── ImportCsvTirAuBut.java
+    │           │
+    │           ├── lire_csv/
+    │           │   ├── ButCsvLire.java
+    │           │   ├── ResultatCsvLire.java
+    │           │   └── TirAuButCsvLire.java
+    │           │
+    │           ├── logique/
+    │           │   ├── LogiqueImportBut.java
+    │           │   ├── LogiqueImportMatch.java
+    │           │   └── LogiqueImportTirAuBut.java
+    │           │
+    │           └── parseur/
+    │               ├── ParseurBut.java
+    │               ├── ParseurResultat.java
+    │               └── ParseurTirAuBut.java
+    │
+    └──resources/
+        ├── META-INF/
+        │   └── persistence.xml      # config JPA
+        │
+        ├── logback.xml             # config logs
+        │
+        ├── csv/                    #  fichiers de données
+           ├── goalscorers.csv
+           ├── results.csv
+           └── shootouts.csv
+```
+        
+
+
+
 ## 🏅 Code quality
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=contant30_2025-JPA-projet-Football)](https://sonarcloud.io/summary/new_code?id=contant30_2025-JPA-projet-Football)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=contant30_2025-JPA-projet-Football&metric=bugs)](https://sonarcloud.io/summary/new_code?id=contant30_2025-JPA-projet-Football)
