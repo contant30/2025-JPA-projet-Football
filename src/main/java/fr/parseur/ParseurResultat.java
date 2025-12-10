@@ -7,6 +7,9 @@ import java.time.LocalDate;
 
 public class ParseurResultat {
 
+    // Constructeur privé pour empêcher une instanciation
+    private ParseurResultat() {    }
+
     /** Ajoute un resultat, construit à partir d'une ligne du CSV,
      *  dans l'objet ResultatCSV passé en paramètre.
      * @param resultatLigne conteneur qui stocke la liste des buts

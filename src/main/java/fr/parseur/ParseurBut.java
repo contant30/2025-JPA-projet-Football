@@ -10,6 +10,9 @@ import java.time.LocalDate;
  */
 public class ParseurBut {
 
+    // Constructeur privé pour empêcher une instanciation
+    private ParseurBut() {
+    }
 
     /** Ajoute un but, construit à partir d'une ligne du CSV,
      *  dans l'objet ButCsv passé en paramètre.

@@ -10,6 +10,8 @@ import java.time.LocalDate;
  */
 public class ParseurTirAuBut {
 
+    // Constructeur privé pour empêcher une instanciation
+    private ParseurTirAuBut() {    }
 
     /** Ajoute une séance de tir but, construit à partir d'une ligne du CSV,
      *  dans l'objet TirAuButCsv passé en paramètre.
