@@ -11,6 +11,8 @@ import java.time.LocalDate;
 
 public class LogiqueImportMatch {
 
+    // Constructeur privé pour empêcher une instanciation
+    private LogiqueImportMatch() {   }
 
     public static void importerResultat(EntityManager em, ResultatData rd, int numLigne) {
 
@@ -28,7 +30,6 @@ public class LogiqueImportMatch {
         String pays = rd.getPays();
 
         // appel de plusieurs méthodes pour chercher ou alors créer
-
         Equipe equipeHote = trouverOuCreerEquipe(em, nomEquipeHote);
         Equipe equipeInvite = trouverOuCreerEquipe(em, nomEquipeInvite);
         Tournoi tournoi = trouverOuCreerTournoi(em, nomTournoi);
@@ -72,7 +73,7 @@ public class LogiqueImportMatch {
 
             em.persist(match);// envoie en base de donnée
 
-            // Si un match est trouvé, on ne le crée par mais s'il manque des infos, on les ajoute
+            // Si un match est trouvé, on complète les infos manquantes si besoin
         } else {
             if (match.getTournoi() == null) {
                 match.setTournoi(tournoi);

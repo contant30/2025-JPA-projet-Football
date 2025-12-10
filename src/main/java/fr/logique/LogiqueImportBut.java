@@ -13,7 +13,8 @@ import static fr.logique.LogiqueImportMatch.trouverOuCreerEquipe;
 
 public class LogiqueImportBut {
 
-    //private static final Map<String, Buteur> cacheButeurs = new HashMap<>();
+    // Constructeur privé pour empêcher une instanciation
+    private LogiqueImportBut() {   }
 
     public static void importerBut(EntityManager em, ButData bd, int numLigne) {
 
@@ -31,7 +32,7 @@ public class LogiqueImportBut {
         String nomButeur = bd.getButeur();
 
 
-        // Conversion des noms en entités Equipe
+        // appel de plusieurs méthodes pour chercher ou alors créer
         Equipe equipeHote = trouverOuCreerEquipe(em, nomEquipeHote);
         Equipe equipeInvite = trouverOuCreerEquipe(em, nomEquipeInvite);
         Equipe equipeButeur = trouverOuCreerEquipe(em, nomEquipeButeur);
@@ -58,8 +59,6 @@ public class LogiqueImportBut {
             return;
         }
 
-       //Buteur buteur = trouverOuCreerButeur(em, nomButeur, equipeButeur);
-
         // Recherche d'un buteur
         Buteur buteur = em.createQuery(
                         "SELECT b FROM Buteur b " +
@@ -71,7 +70,6 @@ public class LogiqueImportBut {
                 .getResultStream()
                 .findFirst()
                 .orElse(null);
-
 
         if (buteur == null) {
             buteur = new Buteur();

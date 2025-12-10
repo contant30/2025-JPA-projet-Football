@@ -10,7 +10,10 @@ import java.time.LocalDate;
 
 public class LogiqueImportTirAuBut {
 
-    public static void importerTirAuBut(EntityManager em, TirAuButData tbd,int numLigne) {
+    // Constructeur privé pour empêcher une instanciation
+    private LogiqueImportTirAuBut() {  }
+
+    public static void importerTirAuBut(EntityManager em, TirAuButData tbd) {
 
         // Info extraite et convertie
         LocalDate date = tbd.getDate();
@@ -42,8 +45,6 @@ public class LogiqueImportTirAuBut {
                 .orElse(null);
 
         if (match == null) {
-            // soit tu crées le match ici, soit tu considères que c'est une erreur
-            // pour l'instant on sort si pas de match
             return;
         }
 
@@ -64,7 +65,8 @@ public class LogiqueImportTirAuBut {
             tirBut.setEquipeGagnanteTir(equipeGagnante);
             em.persist(tirBut);
         } else {
-            // Sinon, on complète éventuellement les infos manquantes
+
+            // Si une séance excite, on complète les infos manquantes si besoin
             if (tirBut.getEquipeCommenceTir() == null) {
                 tirBut.setEquipeCommenceTir(equipeCommence);
             }
@@ -74,7 +76,9 @@ public class LogiqueImportTirAuBut {
         }
     }
 
-    // même méthode utilitaire que dans ta logique d'import de match
+     /* Méthode cherche une équipe par son nom,
+      * ou la crée si elle n'existe pas encore.
+      */
     private static Equipe trouverOuCreerEquipe(EntityManager em, String nomEquipe) {
         Equipe equipe = em.createQuery(
                         "SELECT e FROM Equipe e WHERE e.paysEquipe = :nom",
