@@ -14,7 +14,7 @@ public class LogiqueImportMatch {
     // Constructeur privé pour empêcher une instanciation
     private LogiqueImportMatch() {   }
 
-    public static void importerResultat(EntityManager em, ResultatData rd) {
+    public static void importerResultat(EntityManager em, ResultatData rd, int numLigne) {
 
         // Info extraite et convertie
         LocalDate date = rd.getDate();

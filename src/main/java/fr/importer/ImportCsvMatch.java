@@ -52,14 +52,14 @@ public class ImportCsvMatch {
             // Récupération du chemin du fichier CSV depuis le dossier resources
             String filePath = ClassLoader.getSystemClassLoader().getResource("results.csv").getFile();
             // Lecture du fichier CSV et récupération des données à importer
-            ResultatCSV LireResultat = ResultatCsvLire.LireResultat(filePath);
+            ResultatCSV lireResultat = ResultatCsvLire.LireResultat(filePath);
 
         // démarrage de la transaction et regroupe toutes les opérations en une
         tx.begin();
 
         // Boucle sur chaque ligne du CSV et qui appel une methode pour
         // créer ou mettre à jour une entité sur la base de donnée
-        for (ResultatData rd : LireResultat.getResultatData()) {
+        for (ResultatData rd : lireResultat.getResultatData()) {
             numLigne++;
             LogiqueImportMatch.importerResultat(em, rd, numLigne);
                 nbMatchImportes++;

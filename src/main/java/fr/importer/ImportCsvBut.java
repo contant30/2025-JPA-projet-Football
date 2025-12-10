@@ -53,14 +53,14 @@ public class ImportCsvBut {
             // Récupération du chemin du fichier CSV depuis le dossier resources
             String filePath = ClassLoader.getSystemClassLoader().getResource("goalscorers.csv").getFile();
             // Lecture du fichier CSV et récupération des données à importer
-            ButCsv LireBut = ButCsvLire.LireBut(filePath);
+            ButCsv lireBut = ButCsvLire.LireBut(filePath);
 
         // démarrage de la transaction et regroupe toutes les opérations en une
         tx.begin();
 
         // Boucle sur chaque ligne du CSV et qui appel une methode pour
         // créer ou mettre à jour une entité sur la base de donnée
-        for (ButData bd : LireBut.getButData()){
+        for (ButData bd : lireBut.getButData()){
             numLigne++;
             LogiqueImportBut.importerBut(em, bd, numLigne);
             nbImportes++;
