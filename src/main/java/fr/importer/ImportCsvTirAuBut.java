@@ -50,7 +50,7 @@ public class ImportCsvTirAuBut {
         // Récupération du chemin du fichier CSV depuis le dossier resources
         String filePath = ClassLoader.getSystemClassLoader().getResource("shootouts.csv").getFile();
         // Lecture du fichier CSV et récupération des données à importer
-        TirAuButCsv lireTirAuBut = TirAuButCsvLire.LireTirAuBut(filePath);
+        TirAuButCsv lireTirAuBut = TirAuButCsvLire.lireTirAuBut(filePath);
 
         // démarrage de la transaction et regroupe toutes les opérations en une
         tx.begin();

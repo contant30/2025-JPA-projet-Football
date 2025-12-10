@@ -52,7 +52,7 @@ public class ImportCsvMatch {
             // Récupération du chemin du fichier CSV depuis le dossier resources
             String filePath = ClassLoader.getSystemClassLoader().getResource("results.csv").getFile();
             // Lecture du fichier CSV et récupération des données à importer
-            ResultatCSV lireResultat = ResultatCsvLire.LireResultat(filePath);
+            ResultatCSV lireResultat = ResultatCsvLire.lireResultat(filePath);
 
         // démarrage de la transaction et regroupe toutes les opérations en une
         tx.begin();

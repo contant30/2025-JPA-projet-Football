@@ -26,7 +26,7 @@ public class TirAuButCsvLire {
  *  ou null en cas d'erreur de lecture
  */
 
-public static TirAuButCsv LireTirAuBut(String cheminFichierBut){
+public static TirAuButCsv lireTirAuBut(String cheminFichierBut){
     TirAuButCsv tirAuButCsvCSV = new TirAuButCsv();
 
     List<String> lignes = null;

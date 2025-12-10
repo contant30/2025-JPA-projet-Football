@@ -27,7 +27,7 @@ public class ButCsvLire {
      * @return un objet ButCsv rempli avec les données du fichier,
      *  ou null en cas d'erreur de lecture
      */
-    public static ButCsv LireBut(String cheminFichierBut){
+    public static ButCsv lireBut(String cheminFichierBut){
         ButCsv butCsv = new ButCsv();
 
         List<String> lignes = null;

@@ -26,7 +26,7 @@ public class ResultatCsvLire {
      * @return un objet ResultatCsv rempli avec les données du fichier,
      *  ou null en cas d'erreur de lecture
      */
-    public static ResultatCSV LireResultat(String cheminFichierBut){
+    public static ResultatCSV lireResultat(String cheminFichierBut){
         ResultatCSV resultatCSV = new ResultatCSV();
 
         List<String> lignes = null;
