@@ -3,8 +3,12 @@
 ## ℹ️ Aperçu 
 Réalisation d'un projet JPA(Hibernate) pour importer, gérer et interroger des données issues de compétitions de football international, à partir de fichiers CSV. 
 
+## Objectif
+- Réaliser un dossier de conception 
+- Mettre en place la base de données relationnelle
+- Mettre au point une application permettant d'initialiser la base de données avec des données existantes.
 
-### 🛠️ Fichiers CSV :
+## 🛠️ Fichiers CSV :
 
 <ins>**results.csv**</ins> :
 
@@ -37,7 +41,7 @@ Réalisation d'un projet JPA(Hibernate) pour importer, gérer et interroger des 
 • own_goal – TRUE/FALSE but contre son camp
 • penalty – TRUE/FALSE but sur penalty
 
-### 🛠️ Architecture du projet :
+## 🔗 Architecture du projet :
 
 ```
 src/
